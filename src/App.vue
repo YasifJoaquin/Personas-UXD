@@ -40,8 +40,8 @@ import { RouterLink, RouterView } from 'vue-router'
 
     <div class="font-bold ml-auto">
       <nav class="flex justify-center items-center">
-        <RouterLink to="/formulario" class="text-2xl text-black  mx-14 hover:underline hover:text-yellow-400">Formulario</RouterLink>
-        <RouterLink to="/personas" class="text-2xl text-black  mx-14 hover:underline hover:text-yellow-400">Personas Registradas</RouterLink>
+        <RouterLink to="/formulario" class="md:text-xl text-2xl text-black mx-14 hover:underline hover:text-yellow-400">Formulario</RouterLink>
+        <RouterLink to="/personas" class="text-2xl text-black mx-14 hover:underline hover:text-yellow-400">Personas Registradas</RouterLink>
       </nav>
     </div>
   </header>
