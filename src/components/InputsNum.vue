@@ -1,33 +1,30 @@
+<script>
+export default {
+    props: {
+        label: {
+            type: String,
+            required: true,
+            }
+    },
+    data() {
+        return {
+            content: ' '
+        }
+    },
+    methods: {
+        enviarPadre() {
+            this.$emit('datonum',this.content)
+        }
+    }
+}
+</script>
+
 <template>
     <div>
+        <slot></slot>
+        <br>
         <label class="block font-medium px-9">{{ label }}</label>
-        <input v-bind="value" :type="type" :min="min" :max="max" class="form-input mt-1 block w-full">
+        <input type="number" min="10" max="99" class="form-input mt-1 block w-full mb-8" @input="enviarPadre">
+
     </div>
 </template>
-
-<script>
-    export default {
-        props: {
-            label: {
-                type: String,
-                required: true,
-            },
-            type: {
-                type: String,
-                default: 'number',
-            },
-            value: {
-                type: [String, Number],
-                required: true,
-            },
-            min: {
-                type: String,
-                default: 18,
-            },
-            max: {
-                type: String,
-                default: 99,
-            }
-        },
-    };
-</script>

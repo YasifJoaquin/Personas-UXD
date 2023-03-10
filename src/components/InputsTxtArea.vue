@@ -1,33 +1,30 @@
 <script>
-    export default {
-        data(){
-            return {
-                contenido: ''
+export default {
+    props: {
+        label: {
+            type: String,
+            required: true,
             }
-        },
-        props: {
-            label: {
-                type: String,
-                required: true,
-            },
-            value: {
-                type: [String, Number],
-                required: true,
-            },
-        },
-        methods: {
-            enviar() {
-                this.$emit('content', this.contenido)
-            }
+    },
+    data() {
+        return {
+            datoarea: ' '
         }
-    };
+    },
+    methods: {
+        enviar() {
+            this.$emit('dataarea',this.datoarea)
+        }
+    }
+}
 </script>
-
 
 <template>
     <div>
+        <slot></slot>
+        <br>
         <label class="block font-medium px-9">{{ label }}</label>
-        <textarea v-model="contentido" @input="enviar" class="form-textarea mt-1 block w-full h-24"></textarea>
+        <textarea type="text" v-model="datoarea" class="form-textarea mt-1 block w-full h-24" @input="enviar()"></textarea>
 
     </div>
 </template>
