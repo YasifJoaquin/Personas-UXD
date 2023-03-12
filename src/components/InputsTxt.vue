@@ -24,7 +24,7 @@ export default {
         <slot></slot>
         <br>
         <label class="block font-medium px-9">{{ label }}</label>
-        <input type="text" class="form-input mt-1 block w-full" @input="enviarPadre">
+        <input type="text" v-model="content" @input="enviarPadre" class="form-input mt-1 block w-full">
 
     </div>
 </template>
